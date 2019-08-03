@@ -1,12 +1,6 @@
 class ArtistsController < ApplicationController
   def index
-    if preferences.allow_create_artists
-      @artist = Artist.new
-    else
-      redirect_to artists_path
-    end
-  end
-
+    @artists = Artist.all
   end
 
   def show
